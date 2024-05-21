@@ -1,0 +1,50 @@
+algorithm_description: Runs GMB predictions for Mexico
+algorithm_name: run_GMBpredictions_MEX
+algorithm_version: GMBpredictions_v1
+repository_url: https://repo.maap-project.org/lduncanson/biomass_harmonization
+docker_container_url: mas.maap-project.org/root/maap-workspaces/base_images/vanilla:v3.1.3
+queue: maap-dps-worker-16gb
+build_command: biomass_harmonization/NASA_CMS_2023/Mexico/DPS_algorithm/build_command_main_ADE.sh
+run_command: biomass_harmonization/NASA_CMS_2023/Mexico/DPS_algorithm/run_GMBpredictions_MEX.sh
+disk_space: 20GB 
+
+inputs:
+  config: []
+  file:
+  - default: 'mexico'
+    description: mexico
+    name: mexico
+    required: true
+  - default: 'ccirast'
+    description: ccirast
+    name: ccirast
+    required: true
+  - default: 'heirast'
+    description: heirast
+    name: heirast
+    required: true
+  - default: 'data'
+    description: data
+    name: data
+    required: true
+  - default: 'INLA_model_fit_v2'
+    description: INLA_model_fit_v2
+    name: INLA_model_fit_v2
+    required: true
+  - default: 'MGN2020_INEGI_Urban_Mex_mask_DISS'
+    description: MGN2020_INEGI_Urban_Mex_mask_DISS
+    name: MGN2020_INEGI_Urban_Mex_mask_DISS
+    required: true
+  - default: 'All_Products_Comp_Over30_Binary_6933'
+    description: All_Products_Comp_Over30_Binary_6933
+    name: All_Products_Comp_Over30_Binary_6933
+    required: true
+  - default: 'Projects'
+    description: Projects
+    name: Projects
+    required: true
+  positional:
+  - default: 'output_csv'
+    description: output_csv
+    name: output_csv
+    required: true

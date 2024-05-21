@@ -1,0 +1,16 @@
+name: Packages_for_GMB
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+    - r-fmesher
+    - r-exactextractr
+    - r-sn
+    - r-MatrixModels
+    - r-inlabru
+    - r-terra
+    - r-dplyr
+    - r-spdep
+    - r-sf
+    - r-fields
+    - r-Matrix
