@@ -4,8 +4,8 @@ algorithm_version: GMBpredictions_v1
 repository_url: https://github.com/CEOSBiomassHarmonization/NASA_CMS.git
 docker_container_url: mas.maap-project.org/root/maap-workspaces/base_images/r:v3.1.5
 queue: maap-dps-worker-16gb
-build_command: biomass_harmonization/NASA_CMS_2023/Mexico/DPS_algorithm/build_command_main_ADE.sh
-run_command: biomass_harmonization/NASA_CMS_2023/Mexico/DPS_algorithm/run_GMBpredictions_MEX.sh
+build_command: NASA_CMS/NASA_CMS_2023/Mexico/DPS_algorithm/build_command_main_ADE.sh
+run_command: NASA_CMS/NASA_CMS_2023/Mexico/DPS_algorithm/run_GMBpredictions_MEX.sh
 disk_space: 20GB 
 
 inputs:
