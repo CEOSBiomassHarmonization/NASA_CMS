@@ -16,4 +16,4 @@ Projects="input/Projects.gpkg"
 
 OUTPUTDIR="${PWD}/output"
 
-Rscript ${basedir}/GMB_Mexico.R ${output_csv} ${mexico} ${ccirast} ${heirast} ${data} ${INLA_model_fit_v2} ${MGN2020_INEGI_Urban_Mex_mask_DISS} ${All_Products_Comp_Over30_Binary_6933} ${Projects} 
+conda run --name r --no-capture-output Rscript ${basedir}/GMB_Mexico.R ${output_csv} ${mexico} ${ccirast} ${heirast} ${data} ${INLA_model_fit_v2} ${MGN2020_INEGI_Urban_Mex_mask_DISS} ${All_Products_Comp_Over30_Binary_6933} ${Projects} 

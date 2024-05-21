@@ -1,8 +1,3 @@
-############# OPEN R, THEN RUN THE FOLLOWING COMMAND ###################
-
-options(repos=c(CRAN="https://cran.r-project.org"))
-install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
-
 ############## LOAD PACKAGES ###########
 
 library("fmesher")
