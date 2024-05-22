@@ -39,12 +39,12 @@ inputs:
     description: All_Products_Comp_Over30_Binary_6933
     name: All_Products_Comp_Over30_Binary_6933
     required: true
-  - default: 'Projects'
-    description: Projects
-    name: Projects
-    required: true
   positional:
   - default: 'output_csv'
     description: output_csv
     name: output_csv
+    required: true
+  - default: 'Projects'
+    description: Projects
+    name: Projects
     required: true

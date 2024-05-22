@@ -1,3 +1,20 @@
+############# OPEN R, THEN RUN THE FOLLOWING COMMAND ###################
+
+# options(repos=c(CRAN="https://cran.r-project.org"))
+# install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
+# install.packages("fmesher", dependencies = TRUE)
+# install.packages("MatrixModels", type = "source")
+# install.packages("exactextractr")
+# install.packages("sn" ,dependencies = TRUE)
+# packages <- c("terra","dplyr","spdep", "exactextractr", "sf","ggplot2","viridis","sn","fmesher","exactextractr","fields","Matrix","inlabru")
+# package.check <- lapply(packages, FUN = function(x) {
+#     if (!require(x, character.only = TRUE)) {
+#         install.packages(x, dependencies = TRUE)
+#         library(x, character.only = TRUE, quietly=TRUE)
+#     }
+# })
+
+
 ############## LOAD PACKAGES ###########
 
 library("fmesher")
@@ -16,11 +33,11 @@ library(sn)
 args <- commandArgs(trailingOnly = TRUE)
 
 #### LOAD THE DATA USED TO MAKE THE MODEL ######
-mexico = st_read(args[2], quiet = TRUE) %>% st_union() %>% st_transform(crs = 6933) # 
-cci.rast = rast(args[3])
-hei.rast = rast(args[4])
+mexico = st_read(args[3], quiet = TRUE) %>% st_union() %>% st_transform(crs = 6933) # 
+cci.rast = rast(args[4])
+hei.rast = rast(args[5])
 
-DATA <- read.csv(args[5]) #Read the saved data
+DATA <- read.csv(args[6]) #Read the saved data
 cci.plot <- DATA$cci.plot
 hei.plot <- DATA$hei.plot
 loc.plot <- data.frame(matrix(ncol = 2, nrow = length(hei.plot)))
@@ -37,16 +54,16 @@ k = mesh$n
 A.plot = inla.spde.make.A(mesh = mesh, loc = loc.plot)
 
 ##### LOAD THE MODEL RESULTS ####
-load(args[6])
+load(args[7])
 samples = inla.posterior.sample(n = 250, result = model_fit_v2) 
 
 #### LOAD AN URBAN MASK AND PROBABILITY OF FOREST MASK FOR MEXICO ####
-URBAN = st_read(args[7],quiet=TRUE)
-FNF = rast(args[8])
+URBAN = st_read(args[8],quiet=TRUE)
+FNF = rast(args[9])
 
 ##### MAKE PREDICTIONS ###########
 
-PROJECTS = st_read(args[9], quiet = TRUE) %>% st_transform(crs = 6933)
+PROJECTS = st_read(args[2], quiet = TRUE) %>% st_transform(crs = 6933)
 PROJECTS$ID <- seq.int(nrow(PROJECTS))
 PROJECTS$GMB_mean_AGBD_dense = NA
 PROJECTS$GMB_sd_AGBD_dense = NA
