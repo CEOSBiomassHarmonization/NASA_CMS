@@ -1,6 +1,6 @@
 algorithm_description: Runs GMB predictions for Mexico
 algorithm_name: run_GMBpredictions_MEX
-algorithm_version: GMBpredictions_v1
+algorithm_version: main
 repository_url: https://github.com/CEOSBiomassHarmonization/NASA_CMS.git
 docker_container_url: mas.maap-project.org/root/maap-workspaces/base_images/r:v3.1.5
 queue: maap-dps-worker-16gb
