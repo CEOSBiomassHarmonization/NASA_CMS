@@ -6,5 +6,3 @@ conda env update --name r -f ${basedir}/env_main_ADE.yaml
 
 # Install INLA
 conda run --name r --no-capture-output Rscript ${basedir}/install.R
-
-conda run --name r --no-capture-output Rscript ${basedir}/install.R
