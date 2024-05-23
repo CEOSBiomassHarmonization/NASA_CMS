@@ -16,9 +16,4 @@ All_Products_Comp_Over30_Binary_6933="input/All_Products_Comp_Over30_Binary_6933
 
 OUTPUTDIR="${PWD}/output"
 
-<<<<<<< HEAD
 conda run --name r --no-capture-output Rscript ${basedir}/GMB_Mexico.R output/${output_csv} ${Projects} ${mexico} ${ccirast} ${heirast} ${data} ${INLA_model_fit_v2} ${MGN2020_INEGI_Urban_Mex_mask_DISS} ${All_Products_Comp_Over30_Binary_6933}
-=======
-
-conda run --name r --no-capture-output Rscript ${basedir}/GMB_Mexico.R ${output_csv} ${Projects} ${mexico} ${ccirast} ${heirast} ${data} ${INLA_model_fit_v2} ${MGN2020_INEGI_Urban_Mex_mask_DISS} ${All_Products_Comp_Over30_Binary_6933}
->>>>>>> fa24f7168ccaaa40f55441096a436b70c449fb21
