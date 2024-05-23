@@ -67,7 +67,7 @@ PROJECTS$ID <- seq.int(nrow(PROJECTS))
 PROJECTS$GMB_mean_AGBD_dense = NA
 PROJECTS$GMB_sd_AGBD_dense = NA
 
-for (f in (1:nrow(PROJECTS)))  { 
+for (f in (1:2))  { #nrow(PROJECTS)
     PROJECTS_ID = PROJECTS[f,]$ID
     grid_to_predict = st_make_grid(PROJECTS[f,], cellsize = c(100,100), what = "centers") %>% st_as_sf() %>% st_filter(PROJECTS[f,])
     grid_to_predict = grid_to_predict[URBAN, ,op=st_disjoint] 
