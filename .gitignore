@@ -1,13 +1,13 @@
 # Python
-.ipynb_checkpoints
+*.ipynb_checkpoints
 
 # History files
 .Rhistory
 .Rapp.history
 
 # Session Data files
-.RData
-.RDataTmp
+*.RData
+*.RDataTmp
 
 # User-specific files
 .Ruserdata
