@@ -1,5 +1,6 @@
-# Python
+# Jupyter notebooks
 *.ipynb_checkpoints
+*executed.ipynb
 
 # History files
 .Rhistory
