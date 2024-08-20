@@ -1,0 +1,93 @@
+algorithm_description: Runs IPCC classes with GEDI
+algorithm_name: run_IPCC_classes_ADE
+algorithm_version: IPCC_classes_ADE_v8
+build_command: NASA_CMS/NASA_CMS_2023/Hunka_2024_NSD/Forest_classification/build_command_main_ADE.sh
+disk_space: 40GB
+docker_container_url: mas.maap-project.org/root/maap-workspaces/base_images/python:v4.0.0
+inputs:
+  config: []
+  file:
+  - default: 'none'
+    description: input
+    name: FOREST_HEIGHT_2000
+    required: true
+  - default: 'none1'
+    description: input2
+    name: FOREST_HEIGHT_2020
+    required: true
+  - default: 'none3'
+    description: input4
+    name: FOREST_LOSS
+    required: true
+  - default: 'none4'
+    description: input5
+    name: ESA_FOREST_COVER
+    required: true
+  - default: 'none44'
+    description: input44
+    name: JRC_TMST
+    required: true
+  - default: 'none444'
+    description: input444
+    name: JRC_DEF
+    required: true
+  - default: 'none4444'
+    description: input4444
+    name: JRC_DEG
+    required: true
+  - default: 'none5'
+    description: input6
+    name: FOREST_COVER_LOSSYEAR
+    required: true
+  - default: 'none5x'
+    description: input5
+    name: BOREAL_AGE
+    required: true
+  - default: 'none6'
+    description: input7
+    name: PLANTATIONS
+    required: true
+  - default: 'none666'
+    description: input666
+    name: GFM
+    required: true
+  - default: 'none7'
+    description: input8
+    name: IFL_rasters
+    required: true
+  - default: 'none88'
+    description: input88
+    name: FII_raster
+    required: true
+  - default: 'none8'
+    description: input9
+    name: primary_forest_asia
+    required: true
+  - default: 'none9'
+    description: input10
+    name: primary_forest_sa
+    required: true
+  - default: 'none0'
+    description: input11
+    name: primary_forest_africa
+    required: true
+  - default: 'none11'
+    description: input12
+    name: EcoCont
+    required: true
+  positional:
+  - default: 'none12'
+    description: position1
+    name: tile
+    required: true
+  - default: 'none13'
+    description: position2
+    name: output_mask
+    required: true
+  - default: 'none13'
+    description: position2
+    name: output_file
+    required: true
+queue: maap-dps-worker-32vcpu-64gb
+repository_url: https://github.com/CEOSBiomassHarmonization/NASA_CMS.git
+run_command: NASA_CMS/NASA_CMS_2023/Hunka_2024_NSD/Forest_classification/run_IPCC_classes_ADE.sh
