@@ -1,2 +1,2 @@
-# NASA_CMS
-Duncanson NASA CMS 2022 
+# NASA Carbon Monitoring Systems
+Duncanson et al., NASA CMS 2022 
