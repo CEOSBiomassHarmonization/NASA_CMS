@@ -1,4 +1,4 @@
-name: layer_alignment_R
+name: r
 channels:
   - conda-forge
   - defaults

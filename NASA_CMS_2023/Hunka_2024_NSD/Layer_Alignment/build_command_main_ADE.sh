@@ -8,6 +8,5 @@ conda env create -f ${basedir}/env_main_ADE.yml
 pushd ${HOME}
 
 # Do not remove this (PMM Dec 2022)
-source activate icesat2_boreal
 source activate r
-conda install -c conda-forge r-optparse r-ranger -y
+conda install -c conda-forge r-optparse r-ranger r-terra -y

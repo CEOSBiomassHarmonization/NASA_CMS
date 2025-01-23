@@ -6,7 +6,6 @@ input_file <- args[1]
 split_string <- args[2] #"TMST_"
 outfile_string <- args[3] #"_JRC_Transition_Map.tif"
 
-# Generate output file name
 outname_extent <- strsplit(basename(input_file), split_string)[[1]][2]
 outname_extent <- strsplit(outname_extent, ".tif")[[1]][1]
 output_file <- file.path(paste0(outname_extent, outfile_string)) 
@@ -29,16 +28,11 @@ xmax <- xmin + 10
 ymin <- ymax - 10
 target_extent <- ext(xmin, xmax, ymin, ymax)
 
-# Define resolution and nodata value
 resolution <- c(0.00025, 0.00025)
 nodata_value <- 0.0 
 r <- rast(input_file)
 
-# Create an empty raster with the target extent and resolution
 target_raster <- rast(extent = target_extent, resolution = resolution, crs = crs(r))
-
-# Apply warp (resampling and reprojecting)
 r_warped <- resample(r, target_raster, method = "near")
 
-# Write the warped raster to the output file
 writeRaster(r_warped, output_file, overwrite = TRUE, gdal = c("COMPRESS=DEFLATE", "PREDICTOR=2", "ZLEVEL=9"))
