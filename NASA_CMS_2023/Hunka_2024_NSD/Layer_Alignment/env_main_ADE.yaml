@@ -1,0 +1,6 @@
+name: layer_alignment_R
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - r-terra
