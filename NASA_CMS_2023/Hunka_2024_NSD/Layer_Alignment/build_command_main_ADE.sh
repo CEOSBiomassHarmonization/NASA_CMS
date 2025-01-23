@@ -2,6 +2,8 @@
 set -x
 basedir=$( cd "$(dirname "$0")" ; pwd -P )
 
+source activate r
+
 #install requirements packages
 conda env create -f ${basedir}/env_main_ADE.yml
 
