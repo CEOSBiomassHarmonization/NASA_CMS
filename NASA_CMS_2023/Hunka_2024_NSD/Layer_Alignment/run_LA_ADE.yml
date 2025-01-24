@@ -13,6 +13,10 @@ inputs:
     required: true
   positional:
   - default: ''
+    description: tile
+    name: tile
+    required: true
+  - default: ''
     description: split_string
     name: split_string
     required: true

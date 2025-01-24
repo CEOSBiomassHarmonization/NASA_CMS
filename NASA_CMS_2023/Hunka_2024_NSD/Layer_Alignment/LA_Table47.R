@@ -2,13 +2,13 @@ library(terra)
 
 args <- commandArgs(trailingOnly = TRUE)
 
-input_file <- args[1]
+input_file <- args[4]
 split_string <- args[2] #"TMST_"
 outfile_string <- args[3] #"_JRC_Transition_Map.tif"
 
 outname_extent <- strsplit(basename(input_file), split_string)[[1]][2]
 outname_extent <- strsplit(outname_extent, ".tif")[[1]][1]
-output_file <- file.path(paste0(outname_extent, outfile_string)) 
+output_file <- file.path(paste0("output/",outname_extent, outfile_string)) 
 
 tile_string <- outname_extent
 parts <- strsplit(tile_string, "_")[[1]]
