@@ -35,6 +35,10 @@ inputs:
     description: input4444
     name: JRC_DEG
     required: true
+  - default: 'none44444'
+    description: input4444
+    name: JRC_FC
+    required: true
   - default: 'none5'
     description: input6
     name: FOREST_COVER_LOSSYEAR
@@ -70,6 +74,10 @@ inputs:
   - default: 'none0'
     description: input11
     name: primary_forest_africa
+    required: true
+  - default: 'none1000'
+    description: input11
+    name: primary_forest_EU
     required: true
   - default: 'none11'
     description: input12

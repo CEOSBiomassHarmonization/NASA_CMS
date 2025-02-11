@@ -40,6 +40,7 @@ parse.add_argument("--FOREST_COVER_LOSSYEAR", help="FOREST_COVER_LOSSYEAR")
 parse.add_argument("--JRC_TMST",help="JRC_TMST")
 parse.add_argument("--JRC_DEF",help="JRC_DEF")
 parse.add_argument("--JRC_DEG",help="JRC_DEG")
+parse.add_argument("--JRC_FC",help="JRC_FC")
 parse.add_argument("--BOREAL_AGE", help="BOREAL_AGE")
 parse.add_argument("--PLANTATIONS", help="PLANTATIONS")
 parse.add_argument("--GFM", help="GFM")
@@ -48,6 +49,7 @@ parse.add_argument("--FII_raster", help="FII_raster")
 parse.add_argument("--primary_forest_asia", help="primary_forest_asia")
 parse.add_argument("--primary_forest_sa", help="primary_forest_sa")
 parse.add_argument("--primary_forest_africa", help="primary_forest_Africa")
+parse.add_argument("--primary_forest_eu", help="primary_forest_eu")
 parse.add_argument("--EcoCont", help="EcoCont")
 parse.add_argument("--tile", help="Tile")
 parse.add_argument("--output_mask", help="output_mask")
@@ -68,6 +70,11 @@ def generate_output():
     PRIMARY = rasterio.open(args.FII_raster).read(1)
     PRIMARY[PRIMARY <= 9600] = 0
     PRIMARY[PRIMARY > 9600] = 1
+
+    with rasterio.open(args.JRC_FC) as src:
+        JRC_FC = src.read(1) # GLAD SUGGESTS TO NOT USE THIS AT ALL 
+        PRIMARY[JRC_FC == 0] = 0
+        del(JRC_FC)
     
     with rasterio.open(args.IFL_rasters) as src:
         INTACT_FORESTS = src.read(1) # GLAD SUGGESTS TO NOT USE THIS AT ALL 
@@ -88,6 +95,11 @@ def generate_output():
         PRIMARY_FOREST_AFRICA = src.read(1)
         PRIMARY[PRIMARY_FOREST_AFRICA > 0] = 1
         del(PRIMARY_FOREST_AFRICA)
+
+    with rasterio.open(args.primary_forest_eu) as src:
+        PRIMARY_FOREST_EU = src.read(1)
+        PRIMARY[PRIMARY_FOREST_EU > 0] = 1
+        del(PRIMARY_FOREST_EU)
                    
     ##### JRC TRANSITION MAP #####
     JRC_TMST = rasterio.open(args.JRC_TMST).read(1)
