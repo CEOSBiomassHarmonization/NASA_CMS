@@ -1,6 +1,6 @@
 algorithm_description: Runs IPCC classes with GEDI
 algorithm_name: run_IPCC_classes_ADE
-algorithm_version: IPCC_classes_ADE_v8
+algorithm_version: IPCC_classes_ADE_v9
 build_command: NASA_CMS/NASA_CMS_2023/Hunka_2024_NSD/Forest_classification/build_command_main_ADE.sh
 disk_space: 40GB
 docker_container_url: mas.maap-project.org/root/maap-workspaces/base_images/python:v4.0.0
