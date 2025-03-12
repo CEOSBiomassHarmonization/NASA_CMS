@@ -1,6 +1,6 @@
 algorithm_description: Aligns layers in a 10 x 10 degree grid of 30 m pixel size
 algorithm_name: run_layer_alignment
-algorithm_version: run_layer_alignment_v1
+algorithm_version: run_layer_alignment_v2
 build_command: NASA_CMS/NASA_CMS_2023/Hunka_2024_NSD/Layer_Alignment/build_command_main_ADE.sh
 disk_space: 10GB
 docker_container_url: mas.maap-project.org/root/maap-workspaces/base_images/r:v4.1.0
